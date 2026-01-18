@@ -1,5 +1,8 @@
 package com.saracalihan.mineglide;
 
+import com.saracalihan.mineglide.block.ModBlocks;
+import com.saracalihan.mineglide.item.ModItemGroups;
+import com.saracalihan.mineglide.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -19,6 +22,10 @@ public class Mineglide implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		LOGGER.info("Hello from mineglide!");
+		LOGGER.info(MOD_ID + " initializing...");
+		ModItems.registerModItems();
+		ModItemGroups.registerModItemGroups();
+		ModBlocks.registerModBlocks();
+		LOGGER.info(MOD_ID + " initialized.");
 	}
 }
